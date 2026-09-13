@@ -31,6 +31,7 @@ import foxlite.instancing.FoxInstanceUpdateMode;
 
 import box3d.Box3D;
 import box3d.Box3DTypes;
+import box3d.Box3DEnums;
 
 using StringTools;
 
@@ -100,7 +101,7 @@ class PlayState extends FlxState
 			scene.add(cubeInstanced);
 
 			var bodyDef = Box3D.defaultBodyDef();
-			bodyDef.type = 2;
+			bodyDef.type = B3BodyType.dynamicBody;
 
 			var dynamicBox = Box3D.makeCubeHull(0.5); //half size
 			var shapeDef = Box3D.defaultShapeDef();
@@ -134,7 +135,7 @@ class PlayState extends FlxState
 				physicsObjects.push(cube);
 
 				var bodyDef = Box3D.defaultBodyDef();
-				bodyDef.type = 2;
+				bodyDef.type = B3BodyType.dynamicBody;
 				bodyDef.position.x = cube.position.x;
 				bodyDef.position.y = cube.position.y;
 				bodyDef.position.z = cube.position.z;

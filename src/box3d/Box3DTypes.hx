@@ -1,5 +1,6 @@
 package box3d;
 
+import box3d.Box3DEnums;
 import haxe.Int64;
 import lime.system.CFFI;
 import lime.system.CFFIPointer;
@@ -1101,7 +1102,7 @@ abstract B3MotionLocks(CFFIPointer) from CFFIPointer to CFFIPointer
 
 abstract B3BodyDef(CFFIPointer) from CFFIPointer to CFFIPointer
 {
-	public var type(get, set):Int;
+	public var type(get, set):B3BodyType;
 	public var position(get, set):B3Pos;
 	public var rotation(get, set):B3Quat;
 	public var linearVelocity(get, set):B3Vec3;
@@ -1126,14 +1127,14 @@ abstract B3BodyDef(CFFIPointer) from CFFIPointer to CFFIPointer
 		this = null;
 		#end
 	}
-	private inline function get_type():Int {
+	private inline function get_type():B3BodyType {
 		#if lime_box3d
 		return box3d_b3BodyDef_type_get(this);
 		#else
 		return 0;
 		#end
 	}
-	private inline function set_type(v:Int):Int {
+	private inline function set_type(v:B3BodyType):B3BodyType {
 		#if lime_box3d
 		return box3d_b3BodyDef_type_set(this, v);
 		#else
@@ -6647,7 +6648,7 @@ abstract B3TOIInput(CFFIPointer) from CFFIPointer to CFFIPointer
 
 abstract B3TOIOutput(CFFIPointer) from CFFIPointer to CFFIPointer
 {
-	public var state(get, set):Int;
+	public var state(get, set):B3TOIState;
 	public var point(get, set):B3Vec3;
 	public var normal(get, set):B3Vec3;
 	public var fraction(get, set):Float;
@@ -6663,14 +6664,14 @@ abstract B3TOIOutput(CFFIPointer) from CFFIPointer to CFFIPointer
 		this = null;
 		#end
 	}
-	private inline function get_state():Int {
+	private inline function get_state():B3TOIState {
 		#if lime_box3d
 		return box3d_b3TOIOutput_state_get(this);
 		#else
 		return 0;
 		#end
 	}
-	private inline function set_state(v:Int):Int {
+	private inline function set_state(v:B3TOIState):B3TOIState {
 		#if lime_box3d
 		return box3d_b3TOIOutput_state_set(this, v);
 		#else
@@ -9932,7 +9933,7 @@ abstract B3ChildShape(CFFIPointer) from CFFIPointer to CFFIPointer
 	public var mesh(get, set):B3Mesh;
 	public var sphere(get, set):B3Sphere;
 	public var transform(get, set):B3Transform;
-	public var type(get, set):Int;
+	public var type(get, set):B3ShapeType;
 	public function new() {
 		#if lime_box3d
 		this = box3d_b3ChildShape_new();
@@ -9996,14 +9997,14 @@ abstract B3ChildShape(CFFIPointer) from CFFIPointer to CFFIPointer
 		return null;
 		#end
 	}
-	private inline function get_type():Int {
+	private inline function get_type():B3ShapeType {
 		#if lime_box3d
 		return box3d_b3ChildShape_type_get(this);
 		#else
 		return 0;
 		#end
 	}
-	private inline function set_type(v:Int):Int {
+	private inline function set_type(v:B3ShapeType):B3ShapeType {
 		#if lime_box3d
 		return box3d_b3ChildShape_type_set(this, v);
 		#else
@@ -10581,7 +10582,7 @@ abstract B3LocalManifold(CFFIPointer) from CFFIPointer to CFFIPointer
 	public var i2(get, set):Int;
 	public var i3(get, set):Int;
 	public var squaredDistance(get, set):Float;
-	public var feature(get, set):Int;
+	public var feature(get, set):B3TriangleFeature;
 	public var triangleFlags(get, set):Int;
 	public function new() {
 		#if lime_box3d
@@ -10702,14 +10703,14 @@ abstract B3LocalManifold(CFFIPointer) from CFFIPointer to CFFIPointer
 		return 0.0;
 		#end
 	}
-	private inline function get_feature():Int {
+	private inline function get_feature():B3TriangleFeature {
 		#if lime_box3d
 		return box3d_b3LocalManifold_feature_get(this);
 		#else
 		return 0;
 		#end
 	}
-	private inline function set_feature(v:Int):Int {
+	private inline function set_feature(v:B3TriangleFeature):B3TriangleFeature {
 		#if lime_box3d
 		return box3d_b3LocalManifold_feature_set(this, v);
 		#else
@@ -10758,7 +10759,7 @@ abstract B3LocalManifold(CFFIPointer) from CFFIPointer to CFFIPointer
 abstract B3DebugShape(CFFIPointer) from CFFIPointer to CFFIPointer
 {
 	public var shapeId(get, set):B3ShapeId;
-	public var type(get, set):Int;
+	public var type(get, set):B3ShapeType;
 	public function new() {
 		#if lime_box3d
 		this = box3d_b3DebugShape_new();
@@ -10780,14 +10781,14 @@ abstract B3DebugShape(CFFIPointer) from CFFIPointer to CFFIPointer
 		return null;
 		#end
 	}
-	private inline function get_type():Int {
+	private inline function get_type():B3ShapeType {
 		#if lime_box3d
 		return box3d_b3DebugShape_type_get(this);
 		#else
 		return 0;
 		#end
 	}
-	private inline function set_type(v:Int):Int {
+	private inline function set_type(v:B3ShapeType):B3ShapeType {
 		#if lime_box3d
 		return box3d_b3DebugShape_type_set(this, v);
 		#else
@@ -11246,7 +11247,7 @@ abstract B3RecPlayerInfo(CFFIPointer) from CFFIPointer to CFFIPointer
 
 abstract B3RecQueryInfo(CFFIPointer) from CFFIPointer to CFFIPointer
 {
-	public var type(get, set):Int;
+	public var type(get, set):B3RecQueryType;
 	public var filter(get, set):B3QueryFilter;
 	public var aabb(get, set):B3AABB;
 	public var origin(get, set):B3Pos;
@@ -11262,14 +11263,14 @@ abstract B3RecQueryInfo(CFFIPointer) from CFFIPointer to CFFIPointer
 		this = null;
 		#end
 	}
-	private inline function get_type():Int {
+	private inline function get_type():B3RecQueryType {
 		#if lime_box3d
 		return box3d_b3RecQueryInfo_type_get(this);
 		#else
 		return 0;
 		#end
 	}
-	private inline function set_type(v:Int):Int {
+	private inline function set_type(v:B3RecQueryType):B3RecQueryType {
 		#if lime_box3d
 		return box3d_b3RecQueryInfo_type_set(this, v);
 		#else

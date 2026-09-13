@@ -1,6 +1,7 @@
 package box3d;
 
 import box3d.Box3DTypes;
+import box3d.Box3DEnums;
 import haxe.Int64;
 import lime.system.CFFI;
 import lime.system.CFFIPointer;
@@ -175,7 +176,7 @@ typedef B3DebugDraw = CFFIPointer;
 
 class Box3D {
 	
-        public static function getByteCount():Int {
+    public static function getByteCount():Int {
 		#if lime_box3d
 		return box3d_b3GetByteCount();
 		#else
@@ -877,14 +878,14 @@ class Box3D {
 		return false;
 		#end
 	}
-	public static function body_GetType(bodyId:B3BodyId):Int {
+	public static function body_GetType(bodyId:B3BodyId):B3BodyType {
 		#if lime_box3d
 		return box3d_b3Body_GetType(bodyId);
 		#else
 		return 0;
 		#end
 	}
-	public static function body_SetType(bodyId:B3BodyId, type:Int):Void {
+	public static function body_SetType(bodyId:B3BodyId, type:B3BodyType):Void {
 		#if lime_box3d
 		box3d_b3Body_SetType(bodyId, type);
 		#end
@@ -1407,7 +1408,7 @@ class Box3D {
 		return false;
 		#end
 	}
-	public static function shape_GetType(shapeId:B3ShapeId):Int {
+	public static function shape_GetType(shapeId:B3ShapeId):B3ShapeType {
 		#if lime_box3d
 		return box3d_b3Shape_GetType(shapeId);
 		#else
@@ -1686,7 +1687,7 @@ class Box3D {
 		return false;
 		#end
 	}
-	public static function joint_GetType(jointId:B3JointId):Int {
+	public static function joint_GetType(jointId:B3JointId):B3JointType {
 		#if lime_box3d
 		return box3d_b3Joint_GetType(jointId);
 		#else
