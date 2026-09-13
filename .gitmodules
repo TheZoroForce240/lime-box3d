@@ -1,0 +1,3 @@
+[submodule "project/lib/box3d"]
+	path = project/lib/box3d
+	url = https://github.com/erincatto/box3d
