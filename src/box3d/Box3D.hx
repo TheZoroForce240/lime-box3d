@@ -1,6 +1,6 @@
-package;
+package box3d;
 
-import Box3DTypes;
+import box3d.Box3DTypes;
 import haxe.Int64;
 import lime.system.CFFI;
 import lime.system.CFFIPointer;

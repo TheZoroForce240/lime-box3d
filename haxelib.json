@@ -7,5 +7,6 @@
   "version": "1.0.0",
   "releasenote": "",
   "contributors": [""],
-  "dependencies": {}
+  "dependencies": {},
+  "classPath": "src"
 }

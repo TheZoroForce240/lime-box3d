@@ -1,4 +1,4 @@
-package;
+package box3d;
 
 import haxe.Int64;
 import lime.system.CFFI;
