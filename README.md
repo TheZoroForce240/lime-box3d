@@ -16,3 +16,24 @@ In Project.xml
 ```xml
 <haxelib name="lime-box3d" unless="32bit" />
 ```
+
+## Example Usage
+
+```haxe
+import box3d.Box3D;
+import box3d.Box3DTypes;
+
+class Test {
+    static function main() {
+        var version = Box3D.getVersion();
+        trace("Box3D");
+        trace(version.major, version.minor, version.revision);
+  
+        var worldDef:B3WorldDef = Box3D.defaultWorldDef();
+        worldDef.gravity.y = -10;
+        var worldId = Box3D.createWorld(worldDef);
+
+        Box3D.destroyWorld(worldId);
+    }
+}
+```
