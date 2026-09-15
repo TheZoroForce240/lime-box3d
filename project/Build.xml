@@ -21,6 +21,8 @@
 	<files id="box3d">
 		<compilerflag value="-Ilib/box3d/include/" />
 		<compilerflag value="-Ilib/box3d/include/box3d/" />
+		<compilerflag value="/std:c17" if="isMsvc" /> <!-- current hxcpp haxelib version (4.3.2) doesnt have HXCPP_C_STANDARD -->
+		<compilerflag value="-std=c17" unless="isMsvc" />
 		<compilerflag value="/W4" if="isMsvc" />
 		<compilerflag value="/wd4820" if="isMsvc" />
 		<compilerflag value="/wd5045" if="isMsvc" />
