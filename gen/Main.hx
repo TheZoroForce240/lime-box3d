@@ -551,7 +551,7 @@ function getHxArgType(t:String) {
         case "size_t": return "Int64";
         case "void*": return "CFFIPointer";
     }
-    if (enumList.contains(t)) return "Int";
+    //if (enumList.contains(t)) return "Int";
     if (t.startsWith("const ") && t.endsWith("*")) {
         return getHxName(t.substring(6, t.length-1));
     } else if (t.startsWith("const ")) {
