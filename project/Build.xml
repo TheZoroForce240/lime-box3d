@@ -5,7 +5,7 @@
 
 	<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
 
-	<set name="LIME_BOX3D" value="1" unless="HXCPP_M32"/> <!-- can't compile 32 bit for some reason? -->
+	<set name="LIME_BOX3D" value="1"/>
 
    <files id="box3d-depends">
       <depend name="lib/box3d/include/box3d/base.h" />

@@ -2,7 +2,7 @@
 
 A [Lime](https://github.com/openfl/lime) extension that adds CFFI bindings for [Box3D](https://github.com/erincatto/box3d)
 
-Work in progress, currently does not support 32 bit and only works on cpp.
+Work in progress, currently only works on cpp.
 
 ## Installation
 
