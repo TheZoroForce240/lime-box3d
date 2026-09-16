@@ -14,7 +14,7 @@ Build NDLL:
 
 In Project.xml
 ```xml
-<haxelib name="lime-box3d" unless="32bit" />
+<haxelib name="lime-box3d" />
 ```
 
 ## Example Usage
