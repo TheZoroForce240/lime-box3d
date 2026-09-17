@@ -100,7 +100,13 @@
 	
 	<set name="DEBUGEXTRA" value="-debug" if="fulldebug" />
 	
-	<target id="NDLL" output="${LIBPREFIX}box3d${DEBUGEXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">
+	<!-- Android arch suffixes for lime -->
+	<set name="ARCH_SUFFIX" value="-v7" if="HXCPP_ARMV7" />
+	<set name="ARCH_SUFFIX" value="-64" if="HXCPP_ARM64" />
+	<set name="ARCH_SUFFIX" value="-x86" if="HXCPP_X86" />
+	<set name="ARCH_SUFFIX" value="-x86_64" if="HXCPP_X86_64" />
+
+	<target id="NDLL" output="${LIBPREFIX}box3d${DEBUGEXTRA}${ARCH_SUFFIX}" tool="linker" toolid="${STD_MODULE_LINK}">
 		<outdir name="../ndll/${BINDIR}"/>
 		<ext value=".ndll" if="windows || mac || linux" unless="android" />
 		<ext value=".so" if="android" />

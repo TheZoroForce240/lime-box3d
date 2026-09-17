@@ -10,7 +10,9 @@ Install haxelib:
 ```haxelib git lime-box3d https://github.com/TheZoroForce240/lime-box3d```
 
 Build NDLL:
-```lime rebuild lime-box3d windows/mac/linux```
+```lime rebuild lime-box3d windows/mac/linux/android```
+
+ __Note:__ For Android, NDK versions r21e to r25 are recommended.
 
 In Project.xml
 ```xml
