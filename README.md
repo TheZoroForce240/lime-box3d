@@ -14,7 +14,7 @@ Build NDLL:
 
  __Notes:__ 
  - For Android, NDK versions r21e to r25 are recommended.
- - For WebAssembly, [EmcriptenSDK](https://github.com/emscripten-core/emsdk) must be installed.
+ - For WebAssembly, [EmscriptenSDK](https://github.com/emscripten-core/emsdk) must be installed.
 
 In Project.xml
 ```xml
