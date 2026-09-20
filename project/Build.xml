@@ -33,6 +33,13 @@
 		<depend files="box3d-depends" />
 
 		<compilerflag value="-DBOX3D_DISABLE_SIMD" if="HXCPP_M32 linux" /> <!-- Disable unsupported instruction set in 32 bit -->
+		
+		<!-- Enable SSE instruction set in WebAssembly -->
+		<compilerflag value="-msimd128" if="emscripten" /> 
+		<compilerflag value="-msse2" if="emscripten" />
+		
+		<!-- Enable POSIX functions -->
+		<compilerflag value="-D_GNU_SOURCE" if="emscripten" />
 
 		<file name="lib/box3d/src/aabb.c" />
 		<file name="lib/box3d/src/arena_allocator.c" />
