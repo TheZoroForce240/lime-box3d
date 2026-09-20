@@ -10,9 +10,11 @@ Install haxelib:
 ```haxelib git lime-box3d https://github.com/TheZoroForce240/lime-box3d```
 
 Build NDLL:
-```lime rebuild lime-box3d windows/mac/linux/android```
+```lime rebuild lime-box3d windows/mac/linux/android/webassembly```
 
- __Note:__ For Android, NDK versions r21e to r25 are recommended.
+ __Notes:__ 
+ - For Android, NDK versions r21e to r25 are recommended.
+ - For WebAssembly, [EmcriptenSDK](https://github.com/emscripten-core/emsdk) must be installed.
 
 In Project.xml
 ```xml
