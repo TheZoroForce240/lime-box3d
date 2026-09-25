@@ -1,3 +1,6 @@
+
+Moved to https://github.com/TheZoroForce240/linc_box3d
+
 # Lime Box3D
 
 A [Lime](https://github.com/openfl/lime) extension that adds CFFI bindings for [Box3D](https://github.com/erincatto/box3d)
